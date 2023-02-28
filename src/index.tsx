@@ -4,6 +4,26 @@ import * as ReactDOM from "react-dom/client"
 import { App } from "./App"
 import reportWebVitals from "./reportWebVitals"
 import * as serviceWorker from "./serviceWorker"
+import { createClient, Provider, subscriptionExchange, defaultExchanges } from 'urql';
+import { createClient as createWSClient } from 'graphql-ws';
+
+const wsClient = createWSClient({
+  url: 'ws://localhost:3001/graphql'
+})
+
+const client = createClient({
+  url: 'http://localhost:3001/graphql',
+  exchanges: [
+    ...defaultExchanges,
+    subscriptionExchange({
+      forwardSubscription: (operation) => ({
+        subscribe: (sink: any) => ({
+          unsubscribe: wsClient.subscribe(operation, sink)
+        })
+      })
+    })
+  ]
+})
 
 
 const container = document.getElementById("root")
@@ -13,7 +33,9 @@ const root = ReactDOM.createRoot(container)
 root.render(
   <React.StrictMode>
     <ColorModeScript />
-    <App />
+    <Provider value={client}>
+      <App />
+    </Provider>
   </React.StrictMode>,
 )
 
