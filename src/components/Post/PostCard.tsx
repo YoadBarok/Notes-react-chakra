@@ -8,10 +8,6 @@ import { RemovePost } from "../../graphql/post";
 import { useMutation } from "urql";
 import ConfirmationPopUp from "../ConfirmationPopUp";
 
-type DeletePostRes = {
-    id: number;
-}
-
 type Props = {
     post: Post
 }
@@ -19,7 +15,7 @@ type Props = {
 export default function PostCard({ post }: Props) {
 
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const [removePostResult, removePost] = useMutation(RemovePost);
+    const [_, removePost] = useMutation(RemovePost);
 
     async function deletePost() {
         const removePostId = post.id;

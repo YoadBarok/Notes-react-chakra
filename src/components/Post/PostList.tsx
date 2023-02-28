@@ -4,7 +4,6 @@ import { useQuery } from "urql";
 import { AllPosts } from "../../graphql/post";
 import { Post } from "../../types/Post";
 import PostCard from "./PostCard";
-import { PostListItem } from "./PostListItem";
 
 type PostsQueryRes = {
     posts: Post[];

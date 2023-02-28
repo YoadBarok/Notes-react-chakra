@@ -1,4 +1,4 @@
-import { Button, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, VStack } from '@chakra-ui/react';
+import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure, VStack } from '@chakra-ui/react';
 import { Form, Formik } from 'formik'
 import { useMutation } from 'urql';
 import { User } from '../../../types/User';
@@ -14,7 +14,7 @@ type Props = {
 export default function CreatePostForm({ user }: Props) {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [createPostResult, createPost] = useMutation(CreatePostMutation)
+    const [_, createPost] = useMutation(CreatePostMutation)
 
     async function onSubmit(values: any) {
 

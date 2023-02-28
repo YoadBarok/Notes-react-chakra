@@ -1,4 +1,4 @@
-import { Avatar, Badge, Box, Flex, Text } from "@chakra-ui/react"
+import { Badge, Box, Flex, Text } from "@chakra-ui/react"
 import { Post } from "../../types/Post"
 import formatDate from "../../utils/formatDate"
 import styles from "../../styles/PostListItem.module.css";

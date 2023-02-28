@@ -8,11 +8,11 @@ import { createClient, Provider, subscriptionExchange, defaultExchanges } from '
 import { createClient as createWSClient } from 'graphql-ws';
 
 const wsClient = createWSClient({
-  url: 'ws://localhost:3001/graphql'
+  url: process.env.REACT_APP_WS_URL
 })
 
 const client = createClient({
-  url: 'http://localhost:3001/graphql',
+  url: process.env.REACT_APP_API_URL,
   exchanges: [
     ...defaultExchanges,
     subscriptionExchange({

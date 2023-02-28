@@ -6,5 +6,4 @@ export const theme = extendTheme({
         heading: 'Montserrat',
         body: 'Montserrat'
     },
-    textColor: 'black',
 })
