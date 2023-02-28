@@ -7,6 +7,7 @@ import * as serviceWorker from "./serviceWorker"
 import { createClient, Provider, subscriptionExchange, defaultExchanges } from 'urql';
 import { createClient as createWSClient } from 'graphql-ws';
 
+
 const wsClient = createWSClient({
   url: process.env.REACT_APP_WS_URL
 })
