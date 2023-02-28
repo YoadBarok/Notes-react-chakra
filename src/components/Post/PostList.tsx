@@ -38,6 +38,7 @@ export const PostList = (props: Props) => {
         {data.posts.length > 0 ? <Flex direction="column">
             <Heading as="h1" size="2xl">Posts:</Heading>
             <Flex direction="row" justifyContent="space-between" mx={6}>
+                {/* Demonstrate the orderBy variable for the AllPosts query */}
                 <Link onClick={() => sortBy("title")}>sort by title</Link>
                 <Link onClick={() => sortBy("createdAt")}>sort by date</Link>
             </Flex>
