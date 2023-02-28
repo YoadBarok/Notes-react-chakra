@@ -26,6 +26,7 @@ export const App = () => (
                 Demo project to show a ui for an imaginary post feed.
                 <br /> Built with Chakra UI, urql, formik and more.
               </Text>
+              {/* the user passed to the form should be the logged in user, but in this example it's a fixed value */}
               <CreatePostForm user={{
                 name: "dummyUser",
                 id: 1,
