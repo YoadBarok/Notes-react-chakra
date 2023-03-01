@@ -39,7 +39,7 @@ export default function PostCard({ post }: Props) {
                                 colorScheme="red"
                                 callBack={deletePost}
                                 message={`Are you sure you want to delete ${post.title}?`}
-                                openButton={<FontAwesomeIcon size="xl" icon={faTrashCan}> </FontAwesomeIcon>}
+                                openButton={<FontAwesomeIcon size="xl" icon={faTrashCan} />}
                             />
                         </HStack>
                         <Text>by: {post.author.name}</Text>
